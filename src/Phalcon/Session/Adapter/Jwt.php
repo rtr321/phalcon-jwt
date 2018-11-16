@@ -341,7 +341,7 @@ class Jwt extends Adapter implements AdapterInterface
      */
     public function regenerateId($ignored = true)
     {
-        $this->set('jti', base64_encode(mcrypt_create_iv(32)));
+        $this->set('jti', base64_encode(random_bytes(32)));
         return $this;
     }
 
